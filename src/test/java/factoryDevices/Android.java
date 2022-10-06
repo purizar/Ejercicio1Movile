@@ -14,8 +14,12 @@ public class Android implements IDevice{
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName","Cato");
         capabilities.setCapability("platformVersion","9");
-        capabilities.setCapability("appPackage","com.android.calculator2");
-        capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
+//        capabilities.setCapability("appPackage","com.android.calculator2");
+//        capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
+
+        capabilities.setCapability("appPackage","com.vrproductiveapps.whendo");
+        capabilities.setCapability("appActivity","com.vrproductiveapps.whendo.ui.HomeActivity");
+
         capabilities.setCapability("platformName","Android");
         AppiumDriver driver= null;
         try {
