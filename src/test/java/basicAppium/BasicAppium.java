@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class BasicAppium {
 
@@ -26,8 +27,11 @@ public class BasicAppium {
         capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
         capabilities.setCapability("platformName","Android");
         driver= new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-        // implicit
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        // implicit 8 appium
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 
     }
 

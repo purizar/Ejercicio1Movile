@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class Android implements IDevice{
     @Override
@@ -28,7 +29,9 @@ public class Android implements IDevice{
             throw new RuntimeException(e);
         }
         // implicit
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+      //  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         return driver;
     }
 }
