@@ -36,6 +36,16 @@ public class AppiumControl {
         }
     }
 
+    public boolean isClickable(){
+        try {
+            this.findControl();
+            return this.control.isEnabled();
+        }catch (Exception e){
+            this.control.isEnabled();
+            return false;
+        }
+    }
+
 
 
 
